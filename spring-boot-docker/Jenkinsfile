@@ -5,8 +5,10 @@ pipeline{
         stage("Build"){
             
             steps{
-                sh "mvn -version"
-                sh "mvn clean install"
+                dir("build_java"){
+                    sh "mvn -version"
+                    sh "mvn clean install"
+                }
             }
         }
     }
