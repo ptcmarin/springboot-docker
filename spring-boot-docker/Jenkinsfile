@@ -6,7 +6,7 @@ pipeline{
             
             steps{
                 dir("spring-boot-docker/"){
-                    sh echo "COMPILANDO"
+                    echo "COMPILANDO"
                     sh "mvn -version"
                     sh "mvn clean install"
                 }
@@ -16,7 +16,7 @@ pipeline{
         stage("Docker"){
             steps{
                 dir("spring-boot-docker/"){
-                    sh echo "CREANDO DOCKER"
+                    echo "CREANDO DOCKER"
                     sh "docker-compose up -d --build"
                 }
             }
