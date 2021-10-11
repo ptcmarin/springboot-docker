@@ -17,7 +17,9 @@ pipeline{
             steps{
                 dir("spring-boot-docker/"){
                     echo "CREANDO DOCKER"
-                    sh "docker-compose up -d --build"
+                    //sh "docker-compose up -d --build"
+                    sh docker-compose up --force-recreate --build -d
+                    sh docker image prune -f
                 }
             }
         }
