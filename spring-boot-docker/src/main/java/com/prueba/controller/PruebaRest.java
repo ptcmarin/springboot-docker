@@ -11,6 +11,6 @@ public class PruebaRest {
 	
 	@GetMapping("/")
 	public String respuesta() {
-		return "Hello from rest controller commit commit!!";
+		return "Hello from rest controller!";
 	}
 }
